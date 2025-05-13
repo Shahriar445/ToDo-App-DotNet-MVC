@@ -1,0 +1,49 @@
+@model ToDo
+
+@{
+    ViewData["Title"] = "Task Details";
+}
+
+<h2 class="text-info">Task Details</h2>
+
+<div class="alert alert-info">
+    <h4 class="alert-heading">Task Information</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Details)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Details)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.IsDone)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.IsDone)
+        </dd>
+    </dl>
+</div>
+
+<div class="d-flex justify-content-between mt-4">
+    <a asp-action="Index" class="btn btn-info btn-lg">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-lg">Edit</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
