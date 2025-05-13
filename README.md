@@ -15,7 +15,7 @@ A simple and elegant **ToDo List** web application built with **ASP.NET Core MVC
 ## 🛠️ Tech Stack
 
 - **Frontend:** HTML, Bootstrap 5, Font Awesome
-- **Backend:** ASP.NET Core MVC (.NET 6 or later)
+- **Backend:** ASP.NET Core MVC (.NET 8 )
 - **Database:** Entity Framework Core with SQL Server
 
 ## 📸 Screenshots
