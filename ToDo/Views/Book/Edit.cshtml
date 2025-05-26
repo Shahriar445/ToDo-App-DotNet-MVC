@@ -1,0 +1,102 @@
+﻿@model Book
+
+<div class="container mt-5">
+    <h2 class="text-warning mb-4">✏️ Edit Book</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form asp-action="Edit">
+                        <input asp-for="Id" type="hidden" />
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Title" class="form-label fw-bold">Book Title</label>
+                                    <input asp-for="Title" class="form-control" placeholder="Enter book title" />
+                                    <span asp-validation-for="Title" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Author" class="form-label fw-bold">Author</label>
+                                    <input asp-for="Author" class="form-control" placeholder="Enter author name" />
+                                    <span asp-validation-for="Author" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="ISBN" class="form-label fw-bold">ISBN</label>
+                                    <input asp-for="ISBN" class="form-control" placeholder="Enter ISBN" />
+                                    <span asp-validation-for="ISBN" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Price" class="form-label fw-bold">Price</label>
+                                    <input asp-for="Price" class="form-control" type="number" step="0.01" placeholder="0.00" />
+                                    <span asp-validation-for="Price" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Genre" class="form-label fw-bold">Genre</label>
+                                    <input asp-for="Genre" class="form-control" placeholder="Enter genre" />
+                                    <span asp-validation-for="Genre" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="PublicationDate" class="form-label fw-bold">Publication Date</label>
+                                    <input asp-for="PublicationDate" class="form-control" type="date" />
+                                    <span asp-validation-for="PublicationDate" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label fw-bold">Description</label>
+                            <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter book description"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="StockQuantity" class="form-label fw-bold">Stock Quantity</label>
+                                    <input asp-for="StockQuantity" class="form-control" type="number" min="0" />
+                                    <span asp-validation-for="StockQuantity" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check mt-4">
+                                    <input asp-for="InStock" class="form-check-input" />
+                                    <label asp-for="InStock" class="form-check-label fw-bold">In Stock</label>
+                                    <span asp-validation-for="InStock" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="submit" class="btn btn-warning px-4">✏️ Update Book</button>
+                            <a asp-action="Index" class="btn btn-outline-primary">🔙 Back to List</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

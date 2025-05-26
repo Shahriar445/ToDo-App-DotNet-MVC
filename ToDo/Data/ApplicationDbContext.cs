@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ToDo.Models;
 
 namespace ToDo.Data
 {
@@ -11,5 +12,6 @@ namespace ToDo.Data
         }
 
         public DbSet<ToDo.Models.ToDo> ToDos { get; set; }
+        public DbSet<Book> Books { get; set; } = null!;
     }
 }
